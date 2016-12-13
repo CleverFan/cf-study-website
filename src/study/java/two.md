@@ -1,7 +1,7 @@
 ---
 title: 封装
 type: javaImprove
-order: 2
+order: 3
 ---
 
 > 如果你认为封装仅仅是private + getter and setter，那你就大错特错了！
