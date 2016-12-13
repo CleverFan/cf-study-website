@@ -105,6 +105,9 @@ feed:
   path: atom.xml
   limit: 20
 
+widgets:
+  - popular_posts
+
 alias:
   javaImprove/index.html: study/java/index.html
   javaImprove/two.html: study/java/two.html

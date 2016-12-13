@@ -56,6 +56,8 @@
   Copyright &copy; 2016-<%- new Date().getFullYear() %> CleverFan
   <br><br>
   <span id="htmer_time"></span>
+
+  <%- partial('partials/popular_posts') %>
 </div>
 
 <script>
@@ -110,3 +112,5 @@ window.addEventListener('scroll', function () {
     document.getElementById("htmer_time").innerHTML = currentTimeHtml;
   }    setInterval(setTime, 1000);
 </script>
+
+<!--page counter part-->
