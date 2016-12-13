@@ -65,7 +65,7 @@ vi /etc/profile
 
 把配置文件里export PATH 中的PATH删掉。
 
-> ![这里写图片描述](http://img.blog.csdn.net/20161213162655199?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+> ![这里写图片描述](http://img.blog.csdn.net/20161213184507918?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 在配置文件的最末尾输入以下内容
 
