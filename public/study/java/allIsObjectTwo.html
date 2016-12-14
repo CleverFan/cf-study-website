@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>使用express搭建nodejs项目 - CleverFan</title>
+        <title>万物皆对象(下) - CleverFan</title>
         <meta charset="utf-8">
         <meta name="description" content="my website">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta property="og:type" content="article">
-        <meta property="og:title" content="使用express搭建nodejs项目 - CleverFan">
+        <meta property="og:title" content="万物皆对象(下) - CleverFan">
         <meta property="og:description" content="my website">
         <meta property="og:image" content="https://cleverfan.cn/images/logo.png">
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="使用express搭建nodejs项目 - CleverFan">
+        <meta name="twitter:title" content="万物皆对象(下) - CleverFan">
         <meta name="twitter:description" content="my website">
         <meta name="twitter:image" content="https://cleverfan.cn/images/logo.png">
 
@@ -26,7 +26,7 @@
 
         <!-- this needs to be loaded before guide's inline scripts -->
         <script src="/js/vue.js"></script>
-        <script>window.PAGE_TYPE = "nodejs"</script>
+        <script>window.PAGE_TYPE = "javaImprove"</script>
     </head>
     <body class="docs">        <div id="mobile-bar" >
             <a class="menu-button"></a>
@@ -59,9 +59,23 @@
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/study/java/" class="nav-link">java</a></li>
+<!--<li><a href="/study/java/" class="nav-link current">java</a></li>-->
+
+<li class="nav-dropdown-container">
+    <a class="nav-link">java</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/java/" class="nav-link">java</a></li>
+        <li><a href="/study/javaEE/struts.html" class="nav-link">javaEE</a></li>
+    </ul>
+</li>
 <li><a href="/study/linux/" class="nav-link">linux</a></li>
-<li><a href="/study/nodejs/" class="nav-link current">nodejs</a></li>
+<li class="nav-dropdown-container">
+    <a class="nav-link">nodejs</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/nodejs/" class="nav-link">nodejs基础</a></li>
+        <li><a href="/study/nodejsModule/" class="nav-link">nodejs模块</a></li>
+    </ul>
+</li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">其他</a><span class="arrow"></span>
@@ -127,9 +141,23 @@
     <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/study/java/" class="nav-link">java</a></li>
+<!--<li><a href="/study/java/" class="nav-link current">java</a></li>-->
+
+<li class="nav-dropdown-container">
+    <a class="nav-link">java</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/java/" class="nav-link">java</a></li>
+        <li><a href="/study/javaEE/struts.html" class="nav-link">javaEE</a></li>
+    </ul>
+</li>
 <li><a href="/study/linux/" class="nav-link">linux</a></li>
-<li><a href="/study/nodejs/" class="nav-link current">nodejs</a></li>
+<li class="nav-dropdown-container">
+    <a class="nav-link">nodejs</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/nodejs/" class="nav-link">nodejs基础</a></li>
+        <li><a href="/study/nodejsModule/" class="nav-link">nodejs模块</a></li>
+    </ul>
+</li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">其他</a><span class="arrow"></span>
@@ -211,7 +239,7 @@
                 
                 
                 <li>
-                    <a href="/study/nodejs/index.html" class="sidebar-link">开始</a>
+                    <a href="/study/java/index.html" class="sidebar-link">开始</a>
                 </li>
             
                 
@@ -219,7 +247,31 @@
                 
                 
                 <li>
-                    <a href="/study/nodejs/one.html" class="sidebar-link current">使用express搭建nodejs项目</a>
+                    <a href="/study/java/allIsObjectOne.html" class="sidebar-link">万物皆对象（上）</a>
+                </li>
+            
+                
+
+                
+                
+                <li>
+                    <a href="/study/java/allIsObjectTwo.html" class="sidebar-link current">万物皆对象(下)</a>
+                </li>
+            
+                
+
+                
+                
+                <li>
+                    <a href="/study/java/package.html" class="sidebar-link">封装</a>
+                </li>
+            
+                
+
+                
+                
+                <li>
+                    <a href="/study/java/extend.html" class="sidebar-link">继承</a>
                 </li>
             
             
@@ -228,86 +280,114 @@
 </div>
 
 
-<div class="content nodejs with-sidebar ">
+<div class="content javaImprove with-sidebar allIsObjectTwo-javaImprove">
     
-      <h1>使用express搭建nodejs项目</h1>
+      <h1>万物皆对象(下)</h1>
     
     
-    <p>最近对nodejs比较感兴趣，所以打算学习一下。但是在学习过程中遇到了一些麻烦，现在将这个过程与大家分享一下。</p>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
-<li>系统 ubutu16.04 （win10下的虚拟机）</li>
-<li>nodejs版本 4.4.7</li>
-<li>npm版本 2.15.8</li>
+    <h2 id="对象的强引用，软引用，弱引用和虚引用"><a href="#对象的强引用，软引用，弱引用和虚引用" class="headerlink" title="对象的强引用，软引用，弱引用和虚引用"></a><strong>对象的强引用，软引用，弱引用和虚引用</strong></h2><p>  Java中是JVM负责内存的分配和回收，这样虽然使用方便，程序不用再像使用c那样操心内存，但同时也是它的缺点(不够灵活)。为了解决内存操作不灵活这个问题，可以采用软引用等方法。</p>
+<p>先介绍一下这四种引用：</p>
+<ul>
+<li><p>强引用</p>
+<blockquote>
+<p>以前我们使用的大部分引用实际上都是强引用，这是使用最普遍的引用。如果一个对象具有强引用，那就类似于必不可少的生活用品，垃圾回收器绝不会回收它。当内存空 间不足，Java虚拟机宁愿抛出OutOfMemoryError错误，使程序异常终止，也不会靠随意回收具有强引用的对象来解决内存不足问题。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>软引用（SoftReference）</p>
+<blockquote>
+<p>如果一个对象只具有软引用，那就类似于可有可物的生活用品。如果内存空间足够，垃圾回收器就不会回收它，如果内存空间不足了，就会回收这些对象的内存。只要垃圾回收器没有回收它，该对象就可以被程序使用。软引用可用来实现内存敏感的高速缓存。</p>
+<p>软引用可以和一个引用队列（ReferenceQueue）联合使用，如果软引用所引用的对象被垃圾回收，JAVA虚拟机就会把这个软引用加入到与之关联的引用队列中。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>弱引用（WeakReference）</p>
+<blockquote>
+<p>如果一个对象只具有弱引用，那就类似于可有可物的生活用品。弱引用与软引用的区别在于：只具有弱引用的对象拥有更短暂的生命周期。在垃圾回收器线程扫描它 所管辖的内存区域的过程中，一旦发现了只具有弱引用的对象，不管当前内存空间足够与否，都会回收它的内存。不过，由于垃圾回收器是一个优先级很低的线程， 因此不一定会很快发现那些只具有弱引用的对象。 </p>
+<p> 弱引用可以和一个引用队列（ReferenceQueue）联合使用，如果弱引用所引用的对象被垃圾回收，Java虚拟机就会把这个弱引用加入到与之关联的引用队列中。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>虚引用（PhantomReference）</p>
+<blockquote>
+<p>“虚引用”顾名思义，就是形同虚设，与其他几种引用都不同，虚引用并不会决定对象的生命周期。如果一个对象仅持有虚引用，那么它就和没有任何引用一样，在任何时候都可能被垃圾回收。</p>
+<p>虚引用主要用来跟踪对象被垃圾回收的活动。虚引用与软引用和弱引用的一个区别在于：虚引用必须和引用队列（ReferenceQueue）联合使用。当垃 圾回收器准备回收一个对象时，如果发现它还有虚引用，就会在回收对象的内存之前，把这个虚引用加入到与之关联的引用队列中。程序可以通过判断引用队列中是 否已经加入了虚引用，来了解被引用的对象是否将要被垃圾回收。程序如果发现某个虚引用已经被加入到引用队列，那么就可以在所引用的对象的内存被回收之前采取必要的行动。</p>
+</blockquote>
+</li>
+</ul>
+<p>在实际开发中，弱引用和虚引用不常用，用得比较多的是软引用，因为它可以加速jvm的回收。</p>
+<p>软引用的使用方式：</p>
+<p><img src="http://img.blog.csdn.net/20161127203117708" alt="这里写图片描述"> </p>
+<p>关于软引用，我之后会单独写一篇文章，所以这里先一笔带过。</p>
+<h2 id="对象的复制"><a href="#对象的复制" class="headerlink" title="对象的复制"></a><strong>对象的复制</strong></h2><p>java除了用new来创建对象，还可以通过clone来复制对象。</p>
+<p>那么这两种方式有什么相同和不同呢？ </p>
+<ul>
+<li>new</li>
 </ul>
 <blockquote>
-<p>nodejs  github主页：<a href="https://github.com/nodejs/node" target="_blank" rel="external">https://github.com/nodejs/node</a><br>nodejs  官网：<a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a><br>nodejs 中文社区：<a href="https://cnodejs.org" target="_blank" rel="external">https://cnodejs.org</a><br>express github主页：<a href="https://github.com/expressjs/express" target="_blank" rel="external">https://github.com/expressjs/express</a></p>
+<p>new操作符的本意是分配内存。程序执行到new操作符时，首先去看new操作符后面的类型，因为知道了类型，才能知道要分配多大的内存空间。分配完内存之后，再调用构造函数，填充对象的各个域，这一步叫做对象的初始化，构造方法返回后，一个对象创建完毕，可以把他的引用（地址）发布到外部，在外部就可以使用这个引用操纵这个对象。</p>
 </blockquote>
-<h2 id="第一步，安装nodejs"><a href="#第一步，安装nodejs" class="headerlink" title="第一步，安装nodejs"></a>第一步，安装nodejs</h2><p><strong>windows</strong>请直接到上诉官网中下载安装即可，现在安装nodejs会自动将npm也安装好。</p>
-<p><strong>Ubuntu系统</strong>：<br>首先确保系统安装来python,gcc,g++,如果没有则安装：<br>（一般Ubuntu都已默认安装）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install python </div><div class="line"></div><div class="line">$ sudo apt-get install build-essential </div><div class="line"></div><div class="line">$ sudo apt-get install gcc </div><div class="line"></div><div class="line">$ sudo apt-get install g++</div></pre></td></tr></table></figure>
-<p>确保都安装了之后，从nodeJS官网下载最新源代码包：node-v4.4.7.tar.gz</p>
-<p>解压：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ tar -zxf node-v4<span class="number">.4</span><span class="number">.7</span>.tar.gz </div><div class="line"></div><div class="line">$ cd node-v4<span class="number">.4</span><span class="number">.7</span></div></pre></td></tr></table></figure>
-<p>默认安装： </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ ./configure </div><div class="line"></div><div class="line">$ make </div><div class="line"></div><div class="line">$ sudo make install</div></pre></td></tr></table></figure>
-<p>选择目录方式安装： </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ ./configure –prefix=/usr/node </div><div class="line"></div><div class="line">$ make -j 5 #5=CPU核数+1 </div><div class="line"></div><div class="line">$ sudo make install</div></pre></td></tr></table></figure>
-<blockquote>
-<p>当然，你也可以通过linux包管理器安装：<br><code>apt get install nodejs -g</code><br><code>apt get install npm -g</code><br>但是个人不建议这么做，因为有时候会莫名其妙的出问题，还是直接编译源码比较实在（编译过程需要一些时间）。</p>
+<ul>
+<li>clone<blockquote>
+<p>clone在第一步是和new相似的， 都是分配内存，调用clone方法时，分配的内存和源对象（即调用clone方法的对象）相同，然后再使用原对象中对应的各个域，填充新对象的域， 填充完成之后，clone方法返回，一个新的相同的对象被创建，同样可以把这个新对象的引用发布到外部。</p>
 </blockquote>
-<p>接下来通过查看版本确认已经安装成功：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm -v</div></pre></td></tr></table></figure>
-<h2 id="第二步，安装express"><a href="#第二步，安装express" class="headerlink" title="第二步，安装express"></a>第二步，安装express</h2><p><strong>Windows</strong>：打开Node.js command prompt，输入：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install express -g</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如何利用clone的方式来得到一个对象呢？</p>
+<p>看代码：</p>
 <blockquote>
-<p>-g是全局安装，在任何地方打开命令行都可以使用相应命令</p>
+<p><img src="http://img.blog.csdn.net/20161127204300965" alt="这里写图片描述"></p>
+<p>对Person类做了一些修改</p>
 </blockquote>
-<p><strong>Ubuntu</strong> 打开终端，输入：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install express -g</div></pre></td></tr></table></figure>
+<p>看实现代码：</p>
 <blockquote>
-<p>请务必使用管理员权限安装，否则会安装失败</p>
+<p><img src="http://img.blog.csdn.net/20161127204359354" alt="这里写图片描述"></p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g express-generator@<span class="number">4</span></div></pre></td></tr></table></figure>
+<p>这样就得到了一个和原来一样的新对象。</p>
+<h2 id="深复制和浅复制"><a href="#深复制和浅复制" class="headerlink" title="深复制和浅复制"></a><strong>深复制和浅复制</strong></h2><p>但是，细心并且善于思考的人可能一经发现了一个问题。</p>
+<p>age是一个基本数据类型，支架clone没什么问题，但是name可是一个String类型的啊。我们clone后的对象里的name和原来对象的name是不是指向同一个字符串常量呢？</p>
+<p>做个试验：</p>
 <blockquote>
-<p>express4.0之后把创建一个APP的功能分离出来为express-generator，所以必须得安装它，否则没法正常使用express</p>
+<p><img src="http://img.blog.csdn.net/20161127205753811" alt="这里写图片描述"> </p>
+<p>果然，是同一个对象。如果你不能理解，那么看这个图。</p>
+<p><img src="http://img.blog.csdn.net/20161127210126755" alt="这里写图片描述"></p>
+<p>其实如果只是String还好，因为String的不可变性，当你随便修改一个值的时候，他们就会指向不同的地址了，但是除了String，其他都是可变的。这就危险了。</p>
 </blockquote>
-<p>通过输入‘express -v’确认安装成功。（有些情况无法查看版本，但是可以正常使用）</p>
-<h2 id="使用express建一个demo"><a href="#使用express建一个demo" class="headerlink" title="使用express建一个demo"></a>使用express建一个demo</h2><ol>
-<li>打开一个用来放源码的目录，输入<code>$ express nodetest -e</code>  </li>
-</ol>
+<p>上面的这种情况，就是浅克隆。这种方式在你的属性列表中有其他对象的引用的时候其实是很危险的。所以，我们需要深克隆。也就是说我们需要将这个对象里的对象也clone一份。怎么做呢？</p>
+<p>在内存中通过字节流的拷贝是比较容易实现的。把母对象写入到一个字节流中，再从字节流中将其读出来，这样就可以创建一个新的对象了，并且该新对象与母对象之间并不存在引用共享的问题，真正实现对象的深拷贝。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用该工具类的对象必须要实现 Serializable 接口，否则是没有办法实现克隆的。</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CloneUtils</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T extends Serializable&gt; <span class="function">T <span class="title">clone</span><span class="params">(T   obj)</span></span>&#123;</div><div class="line">        T cloneObj = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">//写入字节流</span></div><div class="line">            ByteArrayOutputStream out = <span class="keyword">new</span> ByteArrayOutputStream();</div><div class="line">            ObjectOutputStream obs = <span class="keyword">new</span>   ObjectOutputStream(out);</div><div class="line">            obs.writeObject(obj);</div><div class="line">            obs.close();</div><div class="line"></div><div class="line">            <span class="comment">//分配内存，写入原始对象，生成新对象</span></div><div class="line">            ByteArrayInputStream ios = <span class="keyword">new</span>  ByteArrayInputStream(out.toByteArray());</div><div class="line">            ObjectInputStream ois = <span class="keyword">new</span> ObjectInputStream(ios);</div><div class="line">            <span class="comment">//返回生成的新对象</span></div><div class="line">            cloneObj = (T) ois.readObject();</div><div class="line">            ois.close();</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> cloneObj;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用该工具类的对象只要实现 Serializable 接口就可实现对象的克隆，无须继承 Cloneable 接口实现 clone() 方法。</p>
+<p>测试一下：</p>
 <blockquote>
-<p>新建一个名为nodetest的项目，使用ejs作为模板。 ejs （Embedded JavaScript） 是一个标签替换引擎，其语法与 ASP、PHP 相似，易于学习，目前被广泛应用。Express 默认提供的引擎是 jade，它颠覆了传统的模板引擎，制定了一套完整的语法用来生成 HTML 的每个标签结构，功能强大但不易学习。Express 在初始化一个项目的时候需要指定模板引擎，默认支持Jade和ejs。</p>
+<p><img src="http://img.blog.csdn.net/20161127211824152" alt="这里写图片描述"></p>
+<p>很完美</p>
+<p>这个时候，Person类实现了Serializable接口</p>
 </blockquote>
-<ol>
-<li><code>$ cd nodetest &amp;&amp; npm install</code></li>
-</ol>
+<p>是否使用复制，深复制还是浅复制看情况来使用。</p>
 <blockquote>
-<p>进去项目文件夹，并安装所需要的依赖。无参数的 npm install 的功能就是 检查当前目录下的 package.json，并自动安装所有指定的依赖。 </p>
+<p>关于序列化与反序列化以后会讲。</p>
 </blockquote>
-<ol>
-<li><code>$ npm start</code></li>
-</ol>
+<hr>
+<p>这篇文章到这里就暂时告一段落了，后续有补充的话我会继续补充，有错误的话，我也会及时改正。欢迎大家提出问题。</p>
 <blockquote>
-<p>启动项目。接下来，打开浏览器，输入地址 <a href="http://localhost:3000，你就可以看到一个简单的" target="_blank" rel="external">http://localhost:3000，你就可以看到一个简单的</a> Welcome to Express 页面了。</p>
-<p>express以前的版本，启动项目的命令是<br><code>\$ node app.js</code><br>但是，使用最新版的这样是无法启动的，正确的启动命令是<br><code>$ npm start</code></p>
-</blockquote>
-<p>市面上讲nodejs的书籍并不多，而且node的版本更新太快，好多书上的例子用最新版的node已经无法运行了，所以，不要觉得书上的都是正确的，遇到问题多google。</p>
-<blockquote>
-<p>附nodejs教程，中文文档等<br><a href="http://download.csdn.net/detail/qq_31655965/9603069" target="_blank" rel="external">http://download.csdn.net/detail/qq_31655965/9603069</a><br><a href="http://download.csdn.net/detail/qq_31655965/9603064" target="_blank" rel="external">http://download.csdn.net/detail/qq_31655965/9603064</a></p>
+<p>示例代码放在github：<a href="https://github.com/CleverFan/JavaImprove" target="_blank" rel="external">https://github.com/CleverFan/JavaImprove</a></p>
 </blockquote>
 
 
       <div class="guide-links">
         
-        <span>← <a href="/study/nodejs/index.html">开始</a></span>
+        <span>← <a href="/study/java/allIsObjectOne.html">万物皆对象（上）</a></span>
         
+        
+        <span style="float:right"><a href="/study/java/package.html">封装</a> →</span>
         
     </div>
 
     <div class="footer">
       发现错误？想参与编辑？
-      <a href="https://github.com/CleverFan/CleverFan.github.io/blob/2.0-cn/src/study/nodejs/one.md" target="_blank">
+      <a href="https://github.com/CleverFan/CleverFan.github.io/blob/2.0-cn/src/study/java/allIsObjectTwo.md" target="_blank">
         在 Github 上编辑此页！
       </a>
 

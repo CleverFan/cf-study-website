@@ -30,7 +30,7 @@ order: 1
 
 创建对象的前提是先得有一个类。我们先自己创建一个person类。
 
-```
+```java
 //Person类
 public class Person {
     private String name;
@@ -108,7 +108,7 @@ Person p2 = p;
 
 举个例子：
 
-```
+```java
 int i = 2;
 int j = 2;
 ```
@@ -118,7 +118,7 @@ int j = 2;
 
 当然，java堆每一个基本数据类型都提供了对应的包装类。我们依旧可以用new操作符来创建我们想要的变量。
 
-```
+```java
 Integer i = new Integer(1);
 Integer j = new Integer(1);
 ```

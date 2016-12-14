@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>linux下安装jdk - CleverFan</title>
+        <title>使用express搭建nodejs项目 - CleverFan</title>
         <meta charset="utf-8">
         <meta name="description" content="my website">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta property="og:type" content="article">
-        <meta property="og:title" content="linux下安装jdk - CleverFan">
+        <meta property="og:title" content="使用express搭建nodejs项目 - CleverFan">
         <meta property="og:description" content="my website">
         <meta property="og:image" content="https://cleverfan.cn/images/logo.png">
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="linux下安装jdk - CleverFan">
+        <meta name="twitter:title" content="使用express搭建nodejs项目 - CleverFan">
         <meta name="twitter:description" content="my website">
         <meta name="twitter:image" content="https://cleverfan.cn/images/logo.png">
 
@@ -26,7 +26,7 @@
 
         <!-- this needs to be loaded before guide's inline scripts -->
         <script src="/js/vue.js"></script>
-        <script>window.PAGE_TYPE = "linux"</script>
+        <script>window.PAGE_TYPE = "nodejs"</script>
     </head>
     <body class="docs">        <div id="mobile-bar" >
             <a class="menu-button"></a>
@@ -59,9 +59,23 @@
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/study/java/" class="nav-link">java</a></li>
-<li><a href="/study/linux/" class="nav-link current">linux</a></li>
-<li><a href="/study/nodejs/" class="nav-link">nodejs</a></li>
+<!--<li><a href="/study/java/" class="nav-link">java</a></li>-->
+
+<li class="nav-dropdown-container">
+    <a class="nav-link">java</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/java/" class="nav-link">java</a></li>
+        <li><a href="/study/javaEE/struts.html" class="nav-link">javaEE</a></li>
+    </ul>
+</li>
+<li><a href="/study/linux/" class="nav-link">linux</a></li>
+<li class="nav-dropdown-container">
+    <a class="nav-link">nodejs</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/nodejs/" class="nav-link">nodejs基础</a></li>
+        <li><a href="/study/nodejsModule/" class="nav-link">nodejs模块</a></li>
+    </ul>
+</li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">其他</a><span class="arrow"></span>
@@ -127,9 +141,23 @@
     <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/study/java/" class="nav-link">java</a></li>
-<li><a href="/study/linux/" class="nav-link current">linux</a></li>
-<li><a href="/study/nodejs/" class="nav-link">nodejs</a></li>
+<!--<li><a href="/study/java/" class="nav-link">java</a></li>-->
+
+<li class="nav-dropdown-container">
+    <a class="nav-link">java</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/java/" class="nav-link">java</a></li>
+        <li><a href="/study/javaEE/struts.html" class="nav-link">javaEE</a></li>
+    </ul>
+</li>
+<li><a href="/study/linux/" class="nav-link">linux</a></li>
+<li class="nav-dropdown-container">
+    <a class="nav-link">nodejs</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/nodejs/" class="nav-link">nodejs基础</a></li>
+        <li><a href="/study/nodejsModule/" class="nav-link">nodejs模块</a></li>
+    </ul>
+</li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">其他</a><span class="arrow"></span>
@@ -211,7 +239,7 @@
                 
                 
                 <li>
-                    <a href="/study/linux/index.html" class="sidebar-link">开始</a>
+                    <a href="/study/nodejs/index.html" class="sidebar-link">开始</a>
                 </li>
             
                 
@@ -219,23 +247,7 @@
                 
                 
                 <li>
-                    <a href="/study/linux/one.html" class="sidebar-link">nodejs环境的搭建</a>
-                </li>
-            
-                
-
-                
-                
-                <li>
-                    <a href="/study/linux/two.html" class="sidebar-link current">linux下安装jdk</a>
-                </li>
-            
-                
-
-                
-                
-                <li>
-                    <a href="/study/linux/three.html" class="sidebar-link">linux安装tomcat</a>
+                    <a href="/study/nodejs/expressRun.html" class="sidebar-link current">使用express搭建nodejs项目</a>
                 </li>
             
             
@@ -244,76 +256,86 @@
 </div>
 
 
-<div class="content linux with-sidebar ">
+<div class="content nodejs with-sidebar ">
     
-      <h1>linux下安装jdk</h1>
+      <h1>使用express搭建nodejs项目</h1>
     
     
-    <h2 id="linux下安装jdk"><a href="#linux下安装jdk" class="headerlink" title="linux下安装jdk"></a>linux下安装jdk</h2><h3 id="先看一下你的系统有没有自带的jdk"><a href="#先看一下你的系统有没有自带的jdk" class="headerlink" title="先看一下你的系统有没有自带的jdk"></a>先看一下你的系统有没有自带的jdk</h3><p><code>java -version</code><br>如果有，会输出相应的版本信息。那么把自带的删了。用下面的方式：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rpm -qa | grep jdk </div><div class="line">rpm -e --nodeps xxxx <span class="comment">//卸载对应jdk，其中xxxx为所要卸载的jdk名称</span></div></pre></td></tr></table></figure>
-<p>如果没有，那么我们直接安装</p>
-<h3 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h3><p>先找一个放置jdk的目录。假如为/usr/java/：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//新建文件夹</span></div><div class="line">mkdir /usr/java</div><div class="line"><span class="comment">//切换到这个文件夹</span></div><div class="line">cd /usr/java</div><div class="line"></div><div class="line"><span class="comment">//下载rpm文件</span></div><div class="line">wget --no-check-certificate --no-cookies --header <span class="string">"Cookie: oraclelicense=accept-securebackup-cookie"</span> http:<span class="comment">//download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.rpm</span></div></pre></td></tr></table></figure>
-<p>这个时候就是在下载jdk文件了。大概160M，网速快的话很快就好了。</p>
+    <p>最近对nodejs比较感兴趣，所以打算学习一下。但是在学习过程中遇到了一些麻烦，现在将这个过程与大家分享一下。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>系统 ubutu16.04 （win10下的虚拟机）</li>
+<li>nodejs版本 4.4.7</li>
+<li>npm版本 2.15.8</li>
+</ul>
 <blockquote>
-<p><img src="http://img.blog.csdn.net/20161213162514447?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>nodejs  github主页：<a href="https://github.com/nodejs/node" target="_blank" rel="external">https://github.com/nodejs/node</a><br>nodejs  官网：<a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a><br>nodejs 中文社区：<a href="https://cnodejs.org" target="_blank" rel="external">https://cnodejs.org</a><br>express github主页：<a href="https://github.com/expressjs/express" target="_blank" rel="external">https://github.com/expressjs/express</a></p>
 </blockquote>
-<p>可以使用<code>ls</code>命令，查看下载的文件。</p>
-<p>然后</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//给文件添加执行权限</span></div><div class="line">chmod +x jdk<span class="number">-8</span>u112-linux-x64.rpm </div><div class="line"><span class="comment">//使用rpm安装</span></div><div class="line">rpm -ivh jdk<span class="number">-8</span>u112-linux-x64.rpm</div></pre></td></tr></table></figure>
+<h2 id="第一步，安装nodejs"><a href="#第一步，安装nodejs" class="headerlink" title="第一步，安装nodejs"></a>第一步，安装nodejs</h2><p><strong>windows</strong>请直接到上诉官网中下载安装即可，现在安装nodejs会自动将npm也安装好。</p>
+<p><strong>Ubuntu系统</strong>：<br>首先确保系统安装来python,gcc,g++,如果没有则安装：<br>（一般Ubuntu都已默认安装）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install python </div><div class="line"></div><div class="line">$ sudo apt-get install build-essential </div><div class="line"></div><div class="line">$ sudo apt-get install gcc </div><div class="line"></div><div class="line">$ sudo apt-get install g++</div></pre></td></tr></table></figure>
+<p>确保都安装了之后，从nodeJS官网下载最新源代码包：node-v4.4.7.tar.gz</p>
+<p>解压：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ tar -zxf node-v4<span class="number">.4</span><span class="number">.7</span>.tar.gz </div><div class="line"></div><div class="line">$ cd node-v4<span class="number">.4</span><span class="number">.7</span></div></pre></td></tr></table></figure>
+<p>默认安装： </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ ./configure </div><div class="line"></div><div class="line">$ make </div><div class="line"></div><div class="line">$ sudo make install</div></pre></td></tr></table></figure>
+<p>选择目录方式安装： </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ ./configure –prefix=/usr/node </div><div class="line"></div><div class="line">$ make -j 5 #5=CPU核数+1 </div><div class="line"></div><div class="line">$ sudo make install</div></pre></td></tr></table></figure>
 <blockquote>
-<p><img src="http://img.blog.csdn.net/20161213162753022?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>当然，你也可以通过linux包管理器安装：<br><code>apt get install nodejs -g</code><br><code>apt get install npm -g</code><br>但是个人不建议这么做，因为有时候会莫名其妙的出问题，还是直接编译源码比较实在（编译过程需要一些时间）。</p>
 </blockquote>
-<p>这样jdk就安装好了，测试一下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//查看java版本</span></div><div class="line">java -version</div></pre></td></tr></table></figure>
+<p>接下来通过查看版本确认已经安装成功：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm -v</div></pre></td></tr></table></figure>
+<h2 id="第二步，安装express"><a href="#第二步，安装express" class="headerlink" title="第二步，安装express"></a>第二步，安装express</h2><p><strong>Windows</strong>：打开Node.js command prompt，输入：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install express -g</div></pre></td></tr></table></figure>
 <blockquote>
-<p><img src="http://img.blog.csdn.net/20161213162633401?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>-g是全局安装，在任何地方打开命令行都可以使用相应命令</p>
 </blockquote>
-<p>接下来配置环境变量：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//编辑配置文件</span></div><div class="line">vi /etc/profile</div></pre></td></tr></table></figure>
-<p>打开配置文件，按“i”进入输入模式</p>
+<p><strong>Ubuntu</strong> 打开终端，输入：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install express -g</div></pre></td></tr></table></figure>
 <blockquote>
-<p>更多vi的用法，请查看我的vi使用讲解</p>
+<p>请务必使用管理员权限安装，否则会安装失败</p>
 </blockquote>
-<p>把配置文件里export PATH 中的PATH删掉。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g express-generator@<span class="number">4</span></div></pre></td></tr></table></figure>
 <blockquote>
-<p><img src="http://img.blog.csdn.net/20161213184507918?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>express4.0之后把创建一个APP的功能分离出来为express-generator，所以必须得安装它，否则没法正常使用express</p>
 </blockquote>
-<p>在配置文件的最末尾输入以下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/java/jdk1.8.0_112</div><div class="line">export PATH=$JAVA_HOME/bin:$PATH </div><div class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</div></pre></td></tr></table></figure>
-<p>然后按esc，输入“:wq”  按回车键，保存并退出</p>
+<p>通过输入‘express -v’确认安装成功。（有些情况无法查看版本，但是可以正常使用）</p>
+<h2 id="使用express建一个demo"><a href="#使用express建一个demo" class="headerlink" title="使用express建一个demo"></a>使用express建一个demo</h2><ol>
+<li>打开一个用来放源码的目录，输入<code>$ express nodetest -e</code>  </li>
+</ol>
 <blockquote>
-<p><img src="http://img.blog.csdn.net/20161213162724975?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>新建一个名为nodetest的项目，使用ejs作为模板。 ejs （Embedded JavaScript） 是一个标签替换引擎，其语法与 ASP、PHP 相似，易于学习，目前被广泛应用。Express 默认提供的引擎是 jade，它颠覆了传统的模板引擎，制定了一套完整的语法用来生成 HTML 的每个标签结构，功能强大但不易学习。Express 在初始化一个项目的时候需要指定模板引擎，默认支持Jade和ejs。</p>
 </blockquote>
-<p>重启配置文件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure></p>
-<p>这个时候，你就可以在任何位置使用jdk了，测试一下。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//切换到根目录</span></div><div class="line">cd /  </div><div class="line"><span class="comment">//运行这两个java命令，看到结果证明成功</span></div><div class="line">java</div><div class="line">javac</div></pre></td></tr></table></figure>
-<h3 id="使用yum命令安装openjdk。"><a href="#使用yum命令安装openjdk。" class="headerlink" title="使用yum命令安装openjdk。"></a>使用yum命令安装openjdk。</h3><p>openjdk与oracle的jdk有什么区别请自行研究。大部分人都是用Oracle的。但是如果你想使用openjdk，那么你可以用下面的方法安装。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//列出所有的可安装包</span></div><div class="line"> yum list java*</div></pre></td></tr></table></figure>
+<ol>
+<li><code>$ cd nodetest &amp;&amp; npm install</code></li>
+</ol>
 <blockquote>
-<p><img src="http://img.blog.csdn.net/20161213150432654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
+<p>进去项目文件夹，并安装所需要的依赖。无参数的 npm install 的功能就是 检查当前目录下的 package.json，并自动安装所有指定的依赖。 </p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//选择你需要的版本安装，比如：</div><div class="line">yum install java-1.7.0-openjdk</div></pre></td></tr></table></figure>
-<p>恩，安装好了</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>本文默认安装jdk1.8，如果你需要安装其他版本的jdk，请把wget命令后的下载地址换成你需要的版本地址。下载地址获取方法：</p>
+<ol>
+<li><code>$ npm start</code></li>
+</ol>
 <blockquote>
-<p><img src="http://img.blog.csdn.net/20161213170150629?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"> </p>
+<p>启动项目。接下来，打开浏览器，输入地址 <a href="http://localhost:3000，你就可以看到一个简单的" target="_blank" rel="external">http://localhost:3000，你就可以看到一个简单的</a> Welcome to Express 页面了。</p>
+<p>express以前的版本，启动项目的命令是<br><code>\$ node app.js</code><br>但是，使用最新版的这样是无法启动的，正确的启动命令是<br><code>$ npm start</code></p>
 </blockquote>
-<p>官网 ： <a href="http://www.oracle.com/technetwork/cn/java/javase/overview/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/cn/java/javase/overview/index.html</a></p>
+<p>市面上讲nodejs的书籍并不多，而且node的版本更新太快，好多书上的例子用最新版的node已经无法运行了，所以，不要觉得书上的都是正确的，遇到问题多google。</p>
+<blockquote>
+<p>附nodejs教程，中文文档等<br><a href="http://download.csdn.net/detail/qq_31655965/9603069" target="_blank" rel="external">http://download.csdn.net/detail/qq_31655965/9603069</a><br><a href="http://download.csdn.net/detail/qq_31655965/9603064" target="_blank" rel="external">http://download.csdn.net/detail/qq_31655965/9603064</a></p>
+</blockquote>
 
 
       <div class="guide-links">
         
-        <span>← <a href="/study/linux/one.html">nodejs环境的搭建</a></span>
+        <span>← <a href="/study/nodejs/index.html">开始</a></span>
         
-        
-        <span style="float:right"><a href="/study/linux/three.html">linux安装tomcat</a> →</span>
         
     </div>
 
     <div class="footer">
       发现错误？想参与编辑？
-      <a href="https://github.com/CleverFan/CleverFan.github.io/blob/2.0-cn/src/study/linux/two.md" target="_blank">
+      <a href="https://github.com/CleverFan/CleverFan.github.io/blob/2.0-cn/src/study/nodejs/expressRun.md" target="_blank">
         在 Github 上编辑此页！
       </a>
 

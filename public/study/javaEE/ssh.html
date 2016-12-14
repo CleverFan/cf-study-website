@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>nodejs环境的搭建 - CleverFan</title>
+        <title>ssh简介 - CleverFan</title>
         <meta charset="utf-8">
         <meta name="description" content="my website">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta property="og:type" content="article">
-        <meta property="og:title" content="nodejs环境的搭建 - CleverFan">
+        <meta property="og:title" content="ssh简介 - CleverFan">
         <meta property="og:description" content="my website">
         <meta property="og:image" content="https://cleverfan.cn/images/logo.png">
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="nodejs环境的搭建 - CleverFan">
+        <meta name="twitter:title" content="ssh简介 - CleverFan">
         <meta name="twitter:description" content="my website">
         <meta name="twitter:image" content="https://cleverfan.cn/images/logo.png">
 
@@ -26,7 +26,7 @@
 
         <!-- this needs to be loaded before guide's inline scripts -->
         <script src="/js/vue.js"></script>
-        <script>window.PAGE_TYPE = "linux"</script>
+        <script>window.PAGE_TYPE = "javaEE"</script>
     </head>
     <body class="docs">        <div id="mobile-bar" >
             <a class="menu-button"></a>
@@ -59,9 +59,23 @@
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/study/java/" class="nav-link">java</a></li>
-<li><a href="/study/linux/" class="nav-link current">linux</a></li>
-<li><a href="/study/nodejs/" class="nav-link">nodejs</a></li>
+<!--<li><a href="/study/java/" class="nav-link current">java</a></li>-->
+
+<li class="nav-dropdown-container">
+    <a class="nav-link">java</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/java/" class="nav-link">java</a></li>
+        <li><a href="/study/javaEE/struts.html" class="nav-link">javaEE</a></li>
+    </ul>
+</li>
+<li><a href="/study/linux/" class="nav-link">linux</a></li>
+<li class="nav-dropdown-container">
+    <a class="nav-link">nodejs</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/nodejs/" class="nav-link">nodejs基础</a></li>
+        <li><a href="/study/nodejsModule/" class="nav-link">nodejs模块</a></li>
+    </ul>
+</li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">其他</a><span class="arrow"></span>
@@ -127,9 +141,23 @@
     <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/study/java/" class="nav-link">java</a></li>
-<li><a href="/study/linux/" class="nav-link current">linux</a></li>
-<li><a href="/study/nodejs/" class="nav-link">nodejs</a></li>
+<!--<li><a href="/study/java/" class="nav-link current">java</a></li>-->
+
+<li class="nav-dropdown-container">
+    <a class="nav-link">java</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/java/" class="nav-link">java</a></li>
+        <li><a href="/study/javaEE/struts.html" class="nav-link">javaEE</a></li>
+    </ul>
+</li>
+<li><a href="/study/linux/" class="nav-link">linux</a></li>
+<li class="nav-dropdown-container">
+    <a class="nav-link">nodejs</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/nodejs/" class="nav-link">nodejs基础</a></li>
+        <li><a href="/study/nodejsModule/" class="nav-link">nodejs模块</a></li>
+    </ul>
+</li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">其他</a><span class="arrow"></span>
@@ -209,33 +237,61 @@
                 
 
                 
+                    
+                      <li><h3>struts</h3></li>
+                    
+                    
+                    
+                    
+                
                 
                 <li>
-                    <a href="/study/linux/index.html" class="sidebar-link">开始</a>
+                    <a href="/study/javaEE/struts.html" class="sidebar-link">struts简介</a>
                 </li>
             
                 
 
                 
+                    
+                    
+                      <li><h3>hibernate</h3></li>
+                    
+                    
+                    
+                
                 
                 <li>
-                    <a href="/study/linux/one.html" class="sidebar-link current">nodejs环境的搭建</a>
+                    <a href="/study/javaEE/hibernate.html" class="sidebar-link">hibernate简介</a>
                 </li>
             
                 
 
                 
+                    
+                    
+                    
+                      <li><h3>spring</h3></li>
+                    
+                    
+                
                 
                 <li>
-                    <a href="/study/linux/two.html" class="sidebar-link">linux下安装jdk</a>
+                    <a href="/study/javaEE/spring.html" class="sidebar-link">spring简介</a>
                 </li>
             
                 
 
                 
+                    
+                    
+                    
+                    
+                      <li><h3>ssh</h3></li>
+                    
+                
                 
                 <li>
-                    <a href="/study/linux/three.html" class="sidebar-link">linux安装tomcat</a>
+                    <a href="/study/javaEE/ssh.html" class="sidebar-link current">ssh简介</a>
                 </li>
             
             
@@ -244,48 +300,22 @@
 </div>
 
 
-<div class="content linux with-sidebar ">
+<div class="content javaEE with-sidebar ">
     
-      <h1>nodejs环境的搭建</h1>
+      <h1>ssh简介</h1>
     
     
-    <h2 id="nodejs环境的搭建"><a href="#nodejs环境的搭建" class="headerlink" title="nodejs环境的搭建"></a><strong>nodejs环境的搭建</strong></h2><blockquote>
-<p>nodejs的安装方法有很多种，可以通过编译源码或者类似于apt-get等方式。但是由于我们日后可能需要在nodejs的不同版本之间切换，所以这里给大家提供的是用nvm来安装。</p>
-</blockquote>
-<h3 id="nvm是什么"><a href="#nvm是什么" class="headerlink" title="nvm是什么"></a><strong>nvm是什么</strong></h3><p>nvm (Node Version Manager) 是 Nodejs 版本管理器，它让我们能方便的对 Nodejs 的版本进行切换。</p>
-<blockquote>
-<p>举个例子，假设，我们已经安装 nvm 了。如果，我们此时需要用 5.0 版本的 Nodejs ，但是我们本机没有装该版本，那么，我们先执行<br>nvm install 5.0 来安装该版本，然后执行 nvm use 5.0， 此时用的 Nodejs 的版本即为 5.0的。以后我们切换到 5.0 版本只需执行 nvm use 5.0 即可。当然，我们可以用 nvm install 来装更多的版本。</p>
-</blockquote>
-<h3 id="安装nvm"><a href="#安装nvm" class="headerlink" title="安装nvm"></a><strong>安装nvm</strong></h3><blockquote>
-<p>nvm github地址：<a href="https://github.com/creationix/nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a></p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.6/install.sh | bash</div><div class="line"></div><div class="line"></div><div class="line">$ source ~/.bashrc</div><div class="line"></div><div class="line"></div><div class="line">$ command -v nvm</div><div class="line"></div><div class="line">//如果终端打印出“mvm”，证明安装成功</div></pre></td></tr></table></figure>
-<h3 id="通过nvm安装nodejs"><a href="#通过nvm安装nodejs" class="headerlink" title="通过nvm安装nodejs"></a><strong>通过nvm安装nodejs</strong></h3><p>在终端输入</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm ls-remote</div></pre></td></tr></table></figure>
-<blockquote>
-<p>这个命令可以查看当前发布的所有nodejs的版本，从0.1.14到6.4.0</p>
-</blockquote>
-<p>我们选择安装当前使用人数最多的4.5.0版本（见官网）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm install <span class="number">4.5</span><span class="number">.0</span></div></pre></td></tr></table></figure>
-<p>指定 nvm 使用的 Node.js 版本</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm use <span class="number">4.5</span><span class="number">.0</span></div></pre></td></tr></table></figure>
-<p>预设使用 4.5.0 版本，否則每次重新連線登入，還需要重新 nvm use 一次</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm alias <span class="keyword">default</span> <span class="number">4.5</span><span class="number">.0</span></div></pre></td></tr></table></figure>
-<p>这样，nodejs就安装好了，可以通过node -v查看当前使用的版本。同时，npm也安装好了，版本为2.15.9</p>
+    <p>恩，大概就是这样</p>
 
 
       <div class="guide-links">
         
-        <span>← <a href="/study/linux/index.html">开始</a></span>
-        
-        
-        <span style="float:right"><a href="/study/linux/two.html">linux下安装jdk</a> →</span>
         
     </div>
 
     <div class="footer">
       发现错误？想参与编辑？
-      <a href="https://github.com/CleverFan/CleverFan.github.io/blob/2.0-cn/src/study/linux/one.md" target="_blank">
+      <a href="https://github.com/CleverFan/CleverFan.github.io/blob/2.0-cn/src/study/javaEE/ssh.md" target="_blank">
         在 Github 上编辑此页！
       </a>
 

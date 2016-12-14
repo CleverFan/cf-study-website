@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>开始 - CleverFan</title>
+        <title>linux安装tomcat - CleverFan</title>
         <meta charset="utf-8">
         <meta name="description" content="my website">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta property="og:type" content="article">
-        <meta property="og:title" content="开始 - CleverFan">
+        <meta property="og:title" content="linux安装tomcat - CleverFan">
         <meta property="og:description" content="my website">
         <meta property="og:image" content="https://cleverfan.cn/images/logo.png">
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="开始 - CleverFan">
+        <meta name="twitter:title" content="linux安装tomcat - CleverFan">
         <meta name="twitter:description" content="my website">
         <meta name="twitter:image" content="https://cleverfan.cn/images/logo.png">
 
@@ -239,7 +239,7 @@
                 
                 
                 <li>
-                    <a href="/study/linux/index.html" class="sidebar-link current">开始</a>
+                    <a href="/study/linux/index.html" class="sidebar-link">开始</a>
                 </li>
             
                 
@@ -263,7 +263,7 @@
                 
                 
                 <li>
-                    <a href="/study/linux/tomcat.html" class="sidebar-link">linux安装tomcat</a>
+                    <a href="/study/linux/tomcat.html" class="sidebar-link current">linux安装tomcat</a>
                 </li>
             
             
@@ -274,24 +274,58 @@
 
 <div class="content linux with-sidebar ">
     
-      <h1>开始</h1>
+      <h1>linux安装tomcat</h1>
     
     
-    <p>在这里，我将会分享一些和linux有关的知识。包括各种环境的搭建以及一些小技巧。</p>
-<p>所有操作在腾讯云vps主机上操作</p>
-<p>系统为centOS 7 64位。</p>
+    <h2 id="linux安装tomcat"><a href="#linux安装tomcat" class="headerlink" title="linux安装tomcat"></a>linux安装tomcat</h2><blockquote>
+<p>请先看上一篇，linux安装jdk。因为tomcat需要jdk的支持。</p>
+</blockquote>
+<h3 id="如何安装"><a href="#如何安装" class="headerlink" title="如何安装"></a>如何安装</h3><p>新建一个文件夹用来存放tomcat<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//新建文件夹</span></div><div class="line">mkdir /usr/tomcat</div><div class="line"><span class="comment">//切换到该文件夹下</span></div><div class="line">cd /usr/tomcat</div></pre></td></tr></table></figure></p>
+<p>//使用wget，下载tomcat包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -c http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.5.9/bin/apache-tomcat-8.5.9.tar.gz</div></pre></td></tr></table></figure></p>
+<p>下载文笔后，可以使用<code>ls</code> 命令查看：</p>
+<blockquote>
+<p><img src="http://img.blog.csdn.net/20161213164808670?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+</blockquote>
+<p>解压下载的文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf apache-tomcat<span class="number">-8.5</span><span class="number">.9</span>.tar.gz</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><img src="http://img.blog.csdn.net/20161213164853342?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"> </p>
+</blockquote>
+<p>解压成功后，你的tomcat就安装好了。</p>
+<p>启动tomcat<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//切换到bin目录下</span></div><div class="line">cd apache-tomcat<span class="number">-8.5</span><span class="number">.9</span>/bin </div><div class="line"><span class="comment">//运行启动脚本</span></div><div class="line">./startup.sh</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><img src="http://img.blog.csdn.net/20161213165038793?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+</blockquote>
+<p>启动成功。</p>
+<h3 id="如果你有防火墙"><a href="#如果你有防火墙" class="headerlink" title="如果你有防火墙"></a>如果你有防火墙</h3><p>那么请这样做：</p>
+<p>编辑防火墙配置文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/sysconfig/iptables</div></pre></td></tr></table></figure>
+<p>按“i”进入输入模式，添加以下内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-A RH-Firewall<span class="number">-1</span>-INPUT -m state --state NEW -m tcp -p tcp --dport <span class="number">8080</span> -j ACCEPT</div></pre></td></tr></table></figure>
+<p>按esc,输入“:wq”保存并退出。</p>
+<p>重新启动防火墙</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service iptables restart</div></pre></td></tr></table></figure>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>在浏览器里输入 ip:8080</p>
+<blockquote>
+<p><img src="http://img.blog.csdn.net/20161213165339891?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+</blockquote>
+<p>关闭服务器<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./shutdown.sh</div></pre></td></tr></table></figure></p>
+<p>tomcat大概就是这样了，其他的操作你用过tomcat自然就懂了。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>默认下载的包是tomcat8的，如果你需要下载其他版本，请将wget命令后的地址换成你需要的版本的下载地址。下载地址的获取方式：</p>
+<blockquote>
+<p><img src="http://img.blog.csdn.net/20161213165522876?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+</blockquote>
 
 
       <div class="guide-links">
         
+        <span>← <a href="/study/linux/jdk.html">linux下安装jdk</a></span>
         
-        <span style="float:right"><a href="/study/linux/run.html">nodejs环境的搭建</a> →</span>
         
     </div>
 
     <div class="footer">
       发现错误？想参与编辑？
-      <a href="https://github.com/CleverFan/CleverFan.github.io/blob/2.0-cn/src/study/linux/index.md" target="_blank">
+      <a href="https://github.com/CleverFan/CleverFan.github.io/blob/2.0-cn/src/study/linux/tomcat.md" target="_blank">
         在 Github 上编辑此页！
       </a>
 

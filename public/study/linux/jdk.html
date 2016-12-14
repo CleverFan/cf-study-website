@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>万物皆对象(下) - CleverFan</title>
+        <title>linux下安装jdk - CleverFan</title>
         <meta charset="utf-8">
         <meta name="description" content="my website">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta property="og:type" content="article">
-        <meta property="og:title" content="万物皆对象(下) - CleverFan">
+        <meta property="og:title" content="linux下安装jdk - CleverFan">
         <meta property="og:description" content="my website">
         <meta property="og:image" content="https://cleverfan.cn/images/logo.png">
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="万物皆对象(下) - CleverFan">
+        <meta name="twitter:title" content="linux下安装jdk - CleverFan">
         <meta name="twitter:description" content="my website">
         <meta name="twitter:image" content="https://cleverfan.cn/images/logo.png">
 
@@ -26,7 +26,7 @@
 
         <!-- this needs to be loaded before guide's inline scripts -->
         <script src="/js/vue.js"></script>
-        <script>window.PAGE_TYPE = "javaImprove"</script>
+        <script>window.PAGE_TYPE = "linux"</script>
     </head>
     <body class="docs">        <div id="mobile-bar" >
             <a class="menu-button"></a>
@@ -59,9 +59,23 @@
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/study/java/" class="nav-link current">java</a></li>
-<li><a href="/study/linux/" class="nav-link">linux</a></li>
-<li><a href="/study/nodejs/" class="nav-link">nodejs</a></li>
+<!--<li><a href="/study/java/" class="nav-link">java</a></li>-->
+
+<li class="nav-dropdown-container">
+    <a class="nav-link">java</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/java/" class="nav-link">java</a></li>
+        <li><a href="/study/javaEE/struts.html" class="nav-link">javaEE</a></li>
+    </ul>
+</li>
+<li><a href="/study/linux/" class="nav-link current">linux</a></li>
+<li class="nav-dropdown-container">
+    <a class="nav-link">nodejs</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/nodejs/" class="nav-link">nodejs基础</a></li>
+        <li><a href="/study/nodejsModule/" class="nav-link">nodejs模块</a></li>
+    </ul>
+</li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">其他</a><span class="arrow"></span>
@@ -127,9 +141,23 @@
     <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/study/java/" class="nav-link current">java</a></li>
-<li><a href="/study/linux/" class="nav-link">linux</a></li>
-<li><a href="/study/nodejs/" class="nav-link">nodejs</a></li>
+<!--<li><a href="/study/java/" class="nav-link">java</a></li>-->
+
+<li class="nav-dropdown-container">
+    <a class="nav-link">java</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/java/" class="nav-link">java</a></li>
+        <li><a href="/study/javaEE/struts.html" class="nav-link">javaEE</a></li>
+    </ul>
+</li>
+<li><a href="/study/linux/" class="nav-link current">linux</a></li>
+<li class="nav-dropdown-container">
+    <a class="nav-link">nodejs</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+        <li><a href="/study/nodejs/" class="nav-link">nodejs基础</a></li>
+        <li><a href="/study/nodejsModule/" class="nav-link">nodejs模块</a></li>
+    </ul>
+</li>
 <li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">其他</a><span class="arrow"></span>
@@ -211,7 +239,7 @@
                 
                 
                 <li>
-                    <a href="/study/java/index.html" class="sidebar-link">开始</a>
+                    <a href="/study/linux/index.html" class="sidebar-link">开始</a>
                 </li>
             
                 
@@ -219,7 +247,7 @@
                 
                 
                 <li>
-                    <a href="/study/java/zero.html" class="sidebar-link">万物皆对象（上）</a>
+                    <a href="/study/linux/run.html" class="sidebar-link">nodejs环境的搭建</a>
                 </li>
             
                 
@@ -227,7 +255,7 @@
                 
                 
                 <li>
-                    <a href="/study/java/one.html" class="sidebar-link current">万物皆对象(下)</a>
+                    <a href="/study/linux/jdk.html" class="sidebar-link current">linux下安装jdk</a>
                 </li>
             
                 
@@ -235,15 +263,7 @@
                 
                 
                 <li>
-                    <a href="/study/java/two.html" class="sidebar-link">封装</a>
-                </li>
-            
-                
-
-                
-                
-                <li>
-                    <a href="/study/java/three.html" class="sidebar-link">继承</a>
+                    <a href="/study/linux/tomcat.html" class="sidebar-link">linux安装tomcat</a>
                 </li>
             
             
@@ -252,114 +272,76 @@
 </div>
 
 
-<div class="content javaImprove with-sidebar one-javaImprove">
+<div class="content linux with-sidebar ">
     
-      <h1>万物皆对象(下)</h1>
+      <h1>linux下安装jdk</h1>
     
     
-    <h2 id="对象的强引用，软引用，弱引用和虚引用"><a href="#对象的强引用，软引用，弱引用和虚引用" class="headerlink" title="对象的强引用，软引用，弱引用和虚引用"></a><strong>对象的强引用，软引用，弱引用和虚引用</strong></h2><p>  Java中是JVM负责内存的分配和回收，这样虽然使用方便，程序不用再像使用c那样操心内存，但同时也是它的缺点(不够灵活)。为了解决内存操作不灵活这个问题，可以采用软引用等方法。</p>
-<p>先介绍一下这四种引用：</p>
-<ul>
-<li><p>强引用</p>
+    <h2 id="linux下安装jdk"><a href="#linux下安装jdk" class="headerlink" title="linux下安装jdk"></a>linux下安装jdk</h2><h3 id="先看一下你的系统有没有自带的jdk"><a href="#先看一下你的系统有没有自带的jdk" class="headerlink" title="先看一下你的系统有没有自带的jdk"></a>先看一下你的系统有没有自带的jdk</h3><p><code>java -version</code><br>如果有，会输出相应的版本信息。那么把自带的删了。用下面的方式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rpm -qa | grep jdk </div><div class="line">rpm -e --nodeps xxxx <span class="comment">//卸载对应jdk，其中xxxx为所要卸载的jdk名称</span></div></pre></td></tr></table></figure>
+<p>如果没有，那么我们直接安装</p>
+<h3 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h3><p>先找一个放置jdk的目录。假如为/usr/java/：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//新建文件夹</span></div><div class="line">mkdir /usr/java</div><div class="line"><span class="comment">//切换到这个文件夹</span></div><div class="line">cd /usr/java</div><div class="line"></div><div class="line"><span class="comment">//下载rpm文件</span></div><div class="line">wget --no-check-certificate --no-cookies --header <span class="string">"Cookie: oraclelicense=accept-securebackup-cookie"</span> http:<span class="comment">//download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.rpm</span></div></pre></td></tr></table></figure>
+<p>这个时候就是在下载jdk文件了。大概160M，网速快的话很快就好了。</p>
 <blockquote>
-<p>以前我们使用的大部分引用实际上都是强引用，这是使用最普遍的引用。如果一个对象具有强引用，那就类似于必不可少的生活用品，垃圾回收器绝不会回收它。当内存空 间不足，Java虚拟机宁愿抛出OutOfMemoryError错误，使程序异常终止，也不会靠随意回收具有强引用的对象来解决内存不足问题。</p>
+<p><img src="http://img.blog.csdn.net/20161213162514447?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 </blockquote>
-</li>
-</ul>
-<ul>
-<li><p>软引用（SoftReference）</p>
+<p>可以使用<code>ls</code>命令，查看下载的文件。</p>
+<p>然后</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//给文件添加执行权限</span></div><div class="line">chmod +x jdk<span class="number">-8</span>u112-linux-x64.rpm </div><div class="line"><span class="comment">//使用rpm安装</span></div><div class="line">rpm -ivh jdk<span class="number">-8</span>u112-linux-x64.rpm</div></pre></td></tr></table></figure>
 <blockquote>
-<p>如果一个对象只具有软引用，那就类似于可有可物的生活用品。如果内存空间足够，垃圾回收器就不会回收它，如果内存空间不足了，就会回收这些对象的内存。只要垃圾回收器没有回收它，该对象就可以被程序使用。软引用可用来实现内存敏感的高速缓存。</p>
-<p>软引用可以和一个引用队列（ReferenceQueue）联合使用，如果软引用所引用的对象被垃圾回收，JAVA虚拟机就会把这个软引用加入到与之关联的引用队列中。</p>
+<p><img src="http://img.blog.csdn.net/20161213162753022?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 </blockquote>
-</li>
-</ul>
-<ul>
-<li><p>弱引用（WeakReference）</p>
+<p>这样jdk就安装好了，测试一下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//查看java版本</span></div><div class="line">java -version</div></pre></td></tr></table></figure>
 <blockquote>
-<p>如果一个对象只具有弱引用，那就类似于可有可物的生活用品。弱引用与软引用的区别在于：只具有弱引用的对象拥有更短暂的生命周期。在垃圾回收器线程扫描它 所管辖的内存区域的过程中，一旦发现了只具有弱引用的对象，不管当前内存空间足够与否，都会回收它的内存。不过，由于垃圾回收器是一个优先级很低的线程， 因此不一定会很快发现那些只具有弱引用的对象。 </p>
-<p> 弱引用可以和一个引用队列（ReferenceQueue）联合使用，如果弱引用所引用的对象被垃圾回收，Java虚拟机就会把这个弱引用加入到与之关联的引用队列中。</p>
+<p><img src="http://img.blog.csdn.net/20161213162633401?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 </blockquote>
-</li>
-</ul>
-<ul>
-<li><p>虚引用（PhantomReference）</p>
+<p>接下来配置环境变量：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//编辑配置文件</span></div><div class="line">vi /etc/profile</div></pre></td></tr></table></figure>
+<p>打开配置文件，按“i”进入输入模式</p>
 <blockquote>
-<p>“虚引用”顾名思义，就是形同虚设，与其他几种引用都不同，虚引用并不会决定对象的生命周期。如果一个对象仅持有虚引用，那么它就和没有任何引用一样，在任何时候都可能被垃圾回收。</p>
-<p>虚引用主要用来跟踪对象被垃圾回收的活动。虚引用与软引用和弱引用的一个区别在于：虚引用必须和引用队列（ReferenceQueue）联合使用。当垃 圾回收器准备回收一个对象时，如果发现它还有虚引用，就会在回收对象的内存之前，把这个虚引用加入到与之关联的引用队列中。程序可以通过判断引用队列中是 否已经加入了虚引用，来了解被引用的对象是否将要被垃圾回收。程序如果发现某个虚引用已经被加入到引用队列，那么就可以在所引用的对象的内存被回收之前采取必要的行动。</p>
+<p>更多vi的用法，请查看我的vi使用讲解</p>
 </blockquote>
-</li>
-</ul>
-<p>在实际开发中，弱引用和虚引用不常用，用得比较多的是软引用，因为它可以加速jvm的回收。</p>
-<p>软引用的使用方式：</p>
-<p><img src="http://img.blog.csdn.net/20161127203117708" alt="这里写图片描述"> </p>
-<p>关于软引用，我之后会单独写一篇文章，所以这里先一笔带过。</p>
-<h2 id="对象的复制"><a href="#对象的复制" class="headerlink" title="对象的复制"></a><strong>对象的复制</strong></h2><p>java除了用new来创建对象，还可以通过clone来复制对象。</p>
-<p>那么这两种方式有什么相同和不同呢？ </p>
-<ul>
-<li>new</li>
-</ul>
+<p>把配置文件里export PATH 中的PATH删掉。</p>
 <blockquote>
-<p>new操作符的本意是分配内存。程序执行到new操作符时，首先去看new操作符后面的类型，因为知道了类型，才能知道要分配多大的内存空间。分配完内存之后，再调用构造函数，填充对象的各个域，这一步叫做对象的初始化，构造方法返回后，一个对象创建完毕，可以把他的引用（地址）发布到外部，在外部就可以使用这个引用操纵这个对象。</p>
+<p><img src="http://img.blog.csdn.net/20161213184507918?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 </blockquote>
-<ul>
-<li>clone<blockquote>
-<p>clone在第一步是和new相似的， 都是分配内存，调用clone方法时，分配的内存和源对象（即调用clone方法的对象）相同，然后再使用原对象中对应的各个域，填充新对象的域， 填充完成之后，clone方法返回，一个新的相同的对象被创建，同样可以把这个新对象的引用发布到外部。</p>
-</blockquote>
-</li>
-</ul>
-<p>如何利用clone的方式来得到一个对象呢？</p>
-<p>看代码：</p>
+<p>在配置文件的最末尾输入以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/java/jdk1.8.0_112</div><div class="line">export PATH=$JAVA_HOME/bin:$PATH </div><div class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</div></pre></td></tr></table></figure>
+<p>然后按esc，输入“:wq”  按回车键，保存并退出</p>
 <blockquote>
-<p><img src="http://img.blog.csdn.net/20161127204300965" alt="这里写图片描述"></p>
-<p>对Person类做了一些修改</p>
+<p><img src="http://img.blog.csdn.net/20161213162724975?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 </blockquote>
-<p>看实现代码：</p>
+<p>重启配置文件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure></p>
+<p>这个时候，你就可以在任何位置使用jdk了，测试一下。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//切换到根目录</span></div><div class="line">cd /  </div><div class="line"><span class="comment">//运行这两个java命令，看到结果证明成功</span></div><div class="line">java</div><div class="line">javac</div></pre></td></tr></table></figure>
+<h3 id="使用yum命令安装openjdk。"><a href="#使用yum命令安装openjdk。" class="headerlink" title="使用yum命令安装openjdk。"></a>使用yum命令安装openjdk。</h3><p>openjdk与oracle的jdk有什么区别请自行研究。大部分人都是用Oracle的。但是如果你想使用openjdk，那么你可以用下面的方法安装。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//列出所有的可安装包</span></div><div class="line"> yum list java*</div></pre></td></tr></table></figure>
 <blockquote>
-<p><img src="http://img.blog.csdn.net/20161127204359354" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20161213150432654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
 </blockquote>
-<p>这样就得到了一个和原来一样的新对象。</p>
-<h2 id="深复制和浅复制"><a href="#深复制和浅复制" class="headerlink" title="深复制和浅复制"></a><strong>深复制和浅复制</strong></h2><p>但是，细心并且善于思考的人可能一经发现了一个问题。</p>
-<p>age是一个基本数据类型，支架clone没什么问题，但是name可是一个String类型的啊。我们clone后的对象里的name和原来对象的name是不是指向同一个字符串常量呢？</p>
-<p>做个试验：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//选择你需要的版本安装，比如：</div><div class="line">yum install java-1.7.0-openjdk</div></pre></td></tr></table></figure>
+<p>恩，安装好了</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>本文默认安装jdk1.8，如果你需要安装其他版本的jdk，请把wget命令后的下载地址换成你需要的版本地址。下载地址获取方法：</p>
 <blockquote>
-<p><img src="http://img.blog.csdn.net/20161127205753811" alt="这里写图片描述"> </p>
-<p>果然，是同一个对象。如果你不能理解，那么看这个图。</p>
-<p><img src="http://img.blog.csdn.net/20161127210126755" alt="这里写图片描述"></p>
-<p>其实如果只是String还好，因为String的不可变性，当你随便修改一个值的时候，他们就会指向不同的地址了，但是除了String，其他都是可变的。这就危险了。</p>
+<p><img src="http://img.blog.csdn.net/20161213170150629?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE2NTU5NjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"> </p>
 </blockquote>
-<p>上面的这种情况，就是浅克隆。这种方式在你的属性列表中有其他对象的引用的时候其实是很危险的。所以，我们需要深克隆。也就是说我们需要将这个对象里的对象也clone一份。怎么做呢？</p>
-<p>在内存中通过字节流的拷贝是比较容易实现的。把母对象写入到一个字节流中，再从字节流中将其读出来，这样就可以创建一个新的对象了，并且该新对象与母对象之间并不存在引用共享的问题，真正实现对象的深拷贝。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//使用该工具类的对象必须要实现 Serializable 接口，否则是没有办法实现克隆的。</div><div class="line">public class CloneUtils &#123;</div><div class="line"></div><div class="line">    public static &lt;T extends Serializable&gt; T clone(T   obj)&#123;</div><div class="line">        T cloneObj = null;</div><div class="line">        try &#123;</div><div class="line">            //写入字节流</div><div class="line">            ByteArrayOutputStream out = new ByteArrayOutputStream();</div><div class="line">            ObjectOutputStream obs = new   ObjectOutputStream(out);</div><div class="line">            obs.writeObject(obj);</div><div class="line">            obs.close();</div><div class="line"></div><div class="line">            //分配内存，写入原始对象，生成新对象</div><div class="line">            ByteArrayInputStream ios = new  ByteArrayInputStream(out.toByteArray());</div><div class="line">            ObjectInputStream ois = new ObjectInputStream(ios);</div><div class="line">            //返回生成的新对象</div><div class="line">            cloneObj = (T) ois.readObject();</div><div class="line">            ois.close();</div><div class="line">        &#125; catch (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        return cloneObj;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>使用该工具类的对象只要实现 Serializable 接口就可实现对象的克隆，无须继承 Cloneable 接口实现 clone() 方法。</p>
-<p>测试一下：</p>
-<blockquote>
-<p><img src="http://img.blog.csdn.net/20161127211824152" alt="这里写图片描述"></p>
-<p>很完美</p>
-<p>这个时候，Person类实现了Serializable接口</p>
-</blockquote>
-<p>是否使用复制，深复制还是浅复制看情况来使用。</p>
-<blockquote>
-<p>关于序列化与反序列化以后会讲。</p>
-</blockquote>
-<hr>
-<p>这篇文章到这里就暂时告一段落了，后续有补充的话我会继续补充，有错误的话，我也会及时改正。欢迎大家提出问题。</p>
-<blockquote>
-<p>事例代码放在github：<a href="https://github.com/CleverFan/JavaImprove" target="_blank" rel="external">https://github.com/CleverFan/JavaImprove</a></p>
-</blockquote>
+<p>官网 ： <a href="http://www.oracle.com/technetwork/cn/java/javase/overview/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/cn/java/javase/overview/index.html</a></p>
 
 
       <div class="guide-links">
         
-        <span>← <a href="/study/java/zero.html">万物皆对象（上）</a></span>
+        <span>← <a href="/study/linux/run.html">nodejs环境的搭建</a></span>
         
         
-        <span style="float:right"><a href="/study/java/two.html">封装</a> →</span>
+        <span style="float:right"><a href="/study/linux/tomcat.html">linux安装tomcat</a> →</span>
         
     </div>
 
     <div class="footer">
       发现错误？想参与编辑？
-      <a href="https://github.com/CleverFan/CleverFan.github.io/blob/2.0-cn/src/study/java/one.md" target="_blank">
+      <a href="https://github.com/CleverFan/CleverFan.github.io/blob/2.0-cn/src/study/linux/jdk.md" target="_blank">
         在 Github 上编辑此页！
       </a>
 
