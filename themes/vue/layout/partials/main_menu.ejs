@@ -3,9 +3,11 @@
     <input type="text" id="search-query-<%- context %>" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/study/java/" class="nav-link<%- page.path.match(/java/) ? ' current' : '' %>">java</a></li>
+<!--<li><a href="/study/java/" class="nav-link<%- page.path.match(/java/) ? ' current' : '' %>">java</a></li>-->
+
+<%- partial('partials/java_dropdown') %>
 <li><a href="/study/linux/" class="nav-link<%- page.path.match(/linux/) ? ' current' : '' %>">linux</a></li>
-<li><a href="/study/nodejs/" class="nav-link<%- page.path.match(/nodejs/) ? ' current' : '' %>">nodejs</a></li>
+<%- partial('partials/nodejs_dropdown') %>
 <li><a href="/about/" class="nav-link<%- page.path.match(/about/) ? ' current' : '' %>">参与贡献</a></li>
 <%- partial('partials/community_dropdown') %>
 <!--<%- partial('partials/ecosystem_dropdown') %>-->
