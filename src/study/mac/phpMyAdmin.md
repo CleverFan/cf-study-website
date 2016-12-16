@@ -13,17 +13,32 @@ order: 2
 /private/etc/apache2/httpd.conf
 ```
 
-2.在这个配置文件中，找到```LoadModule php5_module libexec/httpd/libphp5.so```。默认情况下它是被注释的，我们把它前面的注释取消。
+2.在这个配置文件中，找到
+```
+LoadModule php5_module libexec/httpd/libphp5.so
+```
 
-> 
-![取消注释](http://upload-images.jianshu.io/upload_images/4047674-b59a46f9ce4d8760.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 
+默认情况下它是被注释的，我们把它前面的注释取消。
 
-3.在终端中输入```sudo apachectl restart```，, 重启Apache服务器。
+> ![取消注释](http://upload-images.jianshu.io/upload_images/4047674-b59a46f9ce4d8760.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 
 
-4.在浏览器中输入```localhost```进行测试
 
-> 
-![成功](http://upload-images.jianshu.io/upload_images/4047674-67b6bd6f497c4b11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)  
+3.在终端中输入
+
+```
+sudo apachectl restart
+
+```
+ 重启Apache服务器。
+
+4.在浏览器中输入
+```
+localhost
+
+```
+进行测试
+
+> ![成功](http://upload-images.jianshu.io/upload_images/4047674-67b6bd6f497c4b11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)  
 
 这样就证明成功了。
 
@@ -39,6 +54,7 @@ order: 2
 
 > https://www.phpmyadmin.net/
 
+
 点击右上角的download下载即可。
 
 2.下载到本地后，解压到我们刚刚记录的那个目录下（/library、WebServer/Documents）。
@@ -50,6 +66,7 @@ order: 2
 phpmyadmin的运行需要config.inc.php 配置文件，但是官方只给我们提供了config.example.inc.php作为一个demo。所以或者修改文件名，或者复制一份然后改名。推荐复制一份，这样demo还可以随时浏览。
 
 5.修改配置文件config.inc.php。
+
 
 ```
 
