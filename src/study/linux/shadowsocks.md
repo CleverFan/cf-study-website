@@ -83,15 +83,16 @@ order: 5
 > Droplets -> create droplet -> choose CentOS 7.2x64 ->选择最便宜的版本 ->选旧金山 -> private networking -> new ssh key ->add sshkey ->可以改个名字啥的
 
 
+
 > sshkey不创建也可以，但是为了安全还是创建比较好，当然，以后创建也是可以的。
 
 
 > 创建ssh key （mac）：
 	- 打开终端 
-	- 输入 ```ssh-keygen -t rsa``` 回车
+	- 输入 **ssh-keygen -t rsa** 回车
 	- 可以输入passphrase，也可以不输入
 	- 地址默认就好，然后就生成了
-	- `cat /Users/chengfan/.ssh/id_rsa.pub`
+	- **cat /Users/chengfan/.ssh/id_rsa.pub**
 	- 把显示出来的秘钥复制到DO create ssh key 中key面板中
 	- name  随便写
 	- 搞定
@@ -99,7 +100,7 @@ order: 5
 ### **配置你的vps服务器**
 
  - 使用ssh连接
-  >mac&linux : 终端（或者使用zoc7）输入  `ssh root@你的ip地址`，如果你刚刚创建ssh key的时候设置了密码，这个时候需要输入密码，否则直接连上。这个时候，你的终端就相当于你vps的终端，可以做任何你想做的事情。
+  >mac&linux : 终端（或者使用zoc7）输入  **ssh root@你的ip地址**，如果你刚刚创建ssh key的时候设置了密码，这个时候需要输入密码，否则直接连上。这个时候，你的终端就相当于你vps的终端，可以做任何你想做的事情。
  
   >win : 推荐使用putty，请自行研究
  
