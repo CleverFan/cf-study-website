@@ -82,20 +82,21 @@ order: 5
 
 > Droplets -> create droplet -> choose CentOS 7.2x64 ->选择最便宜的版本 ->选旧金山 -> private networking -> new ssh key ->add sshkey ->可以改个名字啥的
 
-
+-----------
 
 > sshkey不创建也可以，但是为了安全还是创建比较好，当然，以后创建也是可以的。
 
+-------------
 
 > 创建ssh key （mac）：
-	- 打开终端 
-	- 输入 **ssh-keygen -t rsa** 回车
-	- 可以输入passphrase，也可以不输入
-	- 地址默认就好，然后就生成了
-	- **cat /Users/chengfan/.ssh/id_rsa.pub**
-	- 把显示出来的秘钥复制到DO create ssh key 中key面板中
-	- name  随便写
-	- 搞定
+- 打开终端 
+- 输入`ssh-keygen -t rsa` 回车
+- 可以输入passphrase，也可以不输入
+- 地址默认就好，然后就生成了
+- `cat /Users/chengfan/.ssh/id_rsa.pub`
+- 把显示出来的秘钥复制到DO create ssh key 中key面板中
+- name  随便写
+- 搞定
 	
 ### **配置你的vps服务器**
 
@@ -109,7 +110,7 @@ order: 5
 
  - 安装必要组件
 
-```
+```js 
 $ yum install m2crypto python-setuptools
 $ easy_install pip
 $ pip install shadowsocks
@@ -117,7 +118,7 @@ $ pip install shadowsocks
 
  - 配置服务器参数
 
-```
+```js
 $ vi  /etc/shadowsocks.json
 
 //按 i 进入输入模式  输入以下内容：
@@ -139,7 +140,7 @@ $ vi  /etc/shadowsocks.json
 
  - 运行命令，启动 Shadowsocks 服务
 
-```
+```js
 $ ssserver -c /etc/shadowsocks.json //启动服务
 
 $ ctrl + c //停止服务
@@ -176,20 +177,20 @@ $ ctrl + c //停止服务
 
  - 安装 supervisor 实现后台运行
 
-```
+```js
 $ easy_install supervisor
 ```
 
  - 然后创建配置文件
 
-```
+```js
 $ echo_supervisord_conf > /etc/supervisord.conf
 
 ```
 
  - 修改配置文件
 
-```
+```js
 $ vi /etc/supervisord.conf
 
 //在文件末尾添加
@@ -203,7 +204,7 @@ startsecs=3
 
  - 设置 supervisord 开机启动，编辑启动文件
 
-```
+```js
 $ vi /etc/rc.local
 //在末尾另起一行添加
 
@@ -215,13 +216,13 @@ $ supervisorctl restart ssserver //重启
 
  - 为 rc.local 添加执行权限
 
-```
+```js
 $ chmod +x /etc/rc.local
 ```
 
  - 运用 supervisord 控制 Shadowsocks 开机自启和后台运行
 
-```
+```js
 $ supervisored
 ```
 大概是这样的：
